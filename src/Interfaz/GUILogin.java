@@ -5,11 +5,15 @@
  */
 package Interfaz;
 
+import DataBase.SqliteConnection;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  *
@@ -20,6 +24,10 @@ public class GUILogin extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+
     public GUILogin() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -32,7 +40,9 @@ public class GUILogin extends javax.swing.JFrame {
         jButton2.setBorderPainted(false);
 
         jTextField1.setOpaque(false);
-        jTextField2.setOpaque(false);
+        jPasswordField1.setOpaque(false);
+
+        conn = SqliteConnection.dbConnector();
 
     }
 
@@ -52,8 +62,9 @@ public class GUILogin extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,13 +95,23 @@ public class GUILogin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 210, 40));
 
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 210, 40));
+
+        jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 380, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 380, 30));
+
+        jPasswordField1.setText("jPasswordField1");
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login foto SIN TEXTOS.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -122,6 +143,38 @@ public class GUILogin extends javax.swing.JFrame {
         jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2MouseEntered
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+
+            String query = "select * from TablaDeDatos where Cedula=? and Contraseña=? ";
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, jTextField1.getText());
+            pst.setString(2, jPasswordField1.getText());
+
+            System.out.println(pst);
+            ResultSet rs = pst.executeQuery();
+            int count = 0;
+            System.out.println(rs.next());
+            while (rs.next()) {
+                count = count + 1;
+            }
+
+            if (count == 1) {
+                System.out.println("User is correct");
+            } else if (count > 1) {
+                System.out.println("User is incorrect");
+            } else {
+                System.out.println("User is incorrect");
+            }
+            rs.close();
+            pst.close();
+        } catch (Exception e) {
+            System.out.println("Hay un error: " + e.getMessage());
+        }
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,8 +217,9 @@ public class GUILogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

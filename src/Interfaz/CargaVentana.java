@@ -23,7 +23,7 @@ public class CargaVentana extends Thread {
     public void run() {
         for (int i = 0; i <= 100; i++) {
             progreso.setValue(i);
-            pausa(30);
+            pausa(0);
         }
         
     }
