@@ -16,6 +16,8 @@ import java.sql.Statement;
  * @author caya
  */
 public class DataBaseEmpleados {
+    
+    
 
     public static final String DB_NAME = "testjava2.db";
     public static final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\caya\\Documents\\NetBeansProjects\\BuiildingSoft\\src\\DataBase\\" + DB_NAME;
