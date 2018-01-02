@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -21,13 +22,15 @@ import javax.swing.JOptionPane;
 public class Conector {
 
     String url = "E:\\Documentos\\Archivos respaldo\\NetBeansProjects\\BuiildingSoft\\src\\DataBase\\RegistroEmpleados.db";
-    Connection connect;
+    Connection connect = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
 
     public void connect() {
         try {
             connect = DriverManager.getConnection("jdbc:sqlite:" + url);
             if (connect != null) {
-                System.out.println("Conectado");
+                System.out.println("Conexion establecida");
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -98,6 +101,34 @@ public class Conector {
             st.execute();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
+        }
+
+    }
+
+    public void validacionUser(JTextField user, JTextField pass) {
+        try {
+            connect();
+            String query = "select * from empleados where Cedula=? and Contraseña=? ";
+            PreparedStatement pst = connect.prepareStatement(query);
+            pst.setString(1, user.getText());
+            pst.setString(2, pass.getText());
+
+            ResultSet rs = pst.executeQuery();
+            int count = 0;
+            while (rs.next()) {
+                count = count + 1;
+            }
+            if (count >= 1) {
+                System.out.println("User is correct");
+
+            } else if (count == 0) {
+                System.out.println("User is incorrect");
+            }
+            rs.close();
+            pst.close();
+
+        } catch (Exception e) {
+            System.out.println("Hay un error: " + e.getMessage());
         }
 
     }

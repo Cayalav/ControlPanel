@@ -24,9 +24,7 @@ public class GUILogin extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
-    Connection conn = null;
-    ResultSet rs = null;
-    PreparedStatement pst = null;
+    Conector con = new Conector();
 
     public GUILogin() {
         initComponents();
@@ -39,10 +37,14 @@ public class GUILogin extends javax.swing.JFrame {
         jButton2.setContentAreaFilled(false);
         jButton2.setBorderPainted(false);
 
+        jButton3.setOpaque(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setBorderPainted(false);
+
         jTextField1.setOpaque(false);
         jPasswordField1.setOpaque(false);
 
-//        conn = Conector.dbConnector();
+        con.connect();
 
     }
 
@@ -110,8 +112,8 @@ public class GUILogin extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 380, 30));
 
-        jPasswordField1.setText("jPasswordField1");
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, -1, -1));
+        jPasswordField1.setBorder(null);
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 380, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login foto SIN TEXTOS.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -145,33 +147,9 @@ public class GUILogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseEntered
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
 
-            String query = "select * from TablaDeDatos where Cedula=? and Contraseña=? ";
-            PreparedStatement pst = conn.prepareStatement(query);
-            pst.setString(1, jTextField1.getText());
-            pst.setString(2, jPasswordField1.getText());
-
-            System.out.println(pst);
-            ResultSet rs = pst.executeQuery();
-            int count = 0;
-            System.out.println(rs.next());
-            while (rs.next()) {
-                count = count + 1;
-            }
-
-            if (count == 1) {
-                System.out.println("User is correct");
-            } else if (count > 1) {
-                System.out.println("User is incorrect");
-            } else {
-                System.out.println("User is incorrect");
-            }
-            rs.close();
-            pst.close();
-        } catch (Exception e) {
-            System.out.println("Hay un error: " + e.getMessage());
-        }
+        Conector con = new Conector();
+        con.validacionUser(jTextField1, jPasswordField1);
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
