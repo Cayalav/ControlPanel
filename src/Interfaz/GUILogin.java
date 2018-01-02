@@ -5,7 +5,7 @@
  */
 package Interfaz;
 
-import DataBase.SqliteConnection;
+import DataBase.Conector;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -42,7 +42,7 @@ public class GUILogin extends javax.swing.JFrame {
         jTextField1.setOpaque(false);
         jPasswordField1.setOpaque(false);
 
-        conn = SqliteConnection.dbConnector();
+//        conn = Conector.dbConnector();
 
     }
 
