@@ -12,6 +12,7 @@ public class BuiildingSoft {
         Splash ventanaSplash = new Splash();
         ventanaSplash.setVisible(true);
 
+
         //databasecrete("1","2","3","4","5","6","7","8","9");
 //        Conector con = new Conector();
 //        con.connect();
