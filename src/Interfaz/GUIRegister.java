@@ -5,6 +5,7 @@
  */
 package Interfaz;
 
+import DataBase.Empleado;
 import java.awt.Cursor;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
@@ -27,8 +28,11 @@ public class GUIRegister extends javax.swing.JFrame {
         jButton1.setOpaque(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setBorderPainted(false);
-        
-        
+
+        jButton2.setOpaque(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setBorderPainted(false);
+
     }
 
     public void close() {
@@ -48,6 +52,18 @@ public class GUIRegister extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jButton2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,7 +83,135 @@ public class GUIRegister extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 30));
 
         jRadioButton1.setBorder(null);
+        jRadioButton1.setContentAreaFilled(false);
+        jRadioButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 385, -1, -1));
+
+        jRadioButton2.setBorder(null);
+        jRadioButton2.setContentAreaFilled(false);
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 385, -1, -1));
+
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton2MouseEntered(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 592, 210, 30));
+
+        jTextField1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Nombre Contacto");
+        jTextField1.setBorder(null);
+        jTextField1.setOpaque(false);
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 215, 295, 20));
+
+        jTextField2.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField2.setText("Número de Cedula");
+        jTextField2.setBorder(null);
+        jTextField2.setOpaque(false);
+        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField2FocusLost(evt);
+            }
+        });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 246, 295, 20));
+
+        jTextField3.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField3.setText("Contraseña");
+        jTextField3.setBorder(null);
+        jTextField3.setOpaque(false);
+        jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField3FocusLost(evt);
+            }
+        });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 280, 295, 20));
+
+        jTextField4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField4.setText("Repetir contraseña");
+        jTextField4.setBorder(null);
+        jTextField4.setOpaque(false);
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 312, 295, 20));
+
+        jTextField5.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField5.setText("Fecha de nacimiento");
+        jTextField5.setBorder(null);
+        jTextField5.setOpaque(false);
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 346, 295, 20));
+
+        jTextField6.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField6.setText("Número Celular");
+        jTextField6.setBorder(null);
+        jTextField6.setOpaque(false);
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 388, 185, 20));
+
+        jTextField7.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField7.setText("Correo Electrónico");
+        jTextField7.setBorder(null);
+        jTextField7.setOpaque(false);
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 428, 295, 20));
+
+        jTextField8.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField8.setText("ARL");
+        jTextField8.setBorder(null);
+        jTextField8.setOpaque(false);
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 462, 295, 20));
+
+        jTextField9.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField9.setText("EPS");
+        jTextField9.setBorder(null);
+        jTextField9.setOpaque(false);
+        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 498, 295, 20));
+
+        jTextField10.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField10.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField10.setText("Número de emergencia");
+        jTextField10.setBorder(null);
+        jTextField10.setOpaque(false);
+        getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 532, 295, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Register foto SIN TEXTOS.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -83,6 +227,185 @@ public class GUIRegister extends javax.swing.JFrame {
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR)); //Esto lo que hace es colocar la manito del mouse cuando esta sobre el boton
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        jRadioButton1.setSelected(false);
+
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        jRadioButton2.setSelected(false);
+
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
+        jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jButton2MouseEntered
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String nombre = jTextField1.getText();
+        String cedula = jTextField2.getText();
+        String contraseña = jTextField3.getText();
+        String fecha_nacimiento = jTextField4.getText();
+        String celular = jTextField5.getText();
+        String correo = jTextField6.getText();
+        String arl = jTextField7.getText();
+        String eps = jTextField8.getText();
+        String celular_emergencia = jTextField9.getText();
+
+        String sexo;
+
+        if (jRadioButton1.isSelected()) {
+            sexo = "Masculino";
+        } else if (jRadioButton2.isSelected()) {
+            sexo = "Femenino";
+        } else {
+            //Ninguno de los dos esta seleccionado
+        }
+
+        Empleado empleado = new Empleado(nombre, cedula, contraseña,
+                fecha_nacimiento, celular, correo,
+                arl, eps, celular_emergencia);
+        empleado.save();
+
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        if (jTextField1.getText().equals("Nombre Contacto")) {
+            jTextField1.setText("");
+
+        }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        if (jTextField1.getText().isEmpty()) {
+            jTextField1.setText("Nombre Contacto");
+        }
+    }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
+        if (jTextField2.getText().equals("Número de Cedula")) {
+            jTextField2.setText("");
+        }
+    }//GEN-LAST:event_jTextField2FocusGained
+
+    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+        if (jTextField2.getText().isEmpty()) {
+            jTextField2.setText("Número de Cedula");
+        }
+    }//GEN-LAST:event_jTextField2FocusLost
+
+    private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
+        if (jTextField3.getText().equals("Contraseña")) {
+            jTextField3.setText("");
+
+        }
+    }//GEN-LAST:event_jTextField3FocusGained
+
+    private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
+         if (jTextField3.getText().isEmpty()) {
+            jTextField3.setText("Contraseña");
+        }
+    }//GEN-LAST:event_jTextField3FocusLost
+
+    
+
+  
+    private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {
+        if (jTextField4.getText().equals("Fepetir Contraseña")) {
+            jTextField4.setText("");
+
+        }
+    }
+
+    private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {
+        if (jTextField4.getText().isEmpty()) {
+            jTextField4.setText("Repetir Contraseña");
+        }
+    }
+
+    private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {
+        if (jTextField5.getText().equals("Fecha de nacimiento")) {
+            jTextField5.setText("");
+
+        }
+    }
+
+    private void jTextField5FocusLost(java.awt.event.FocusEvent evt) {
+        if (jTextField5.getText().isEmpty()) {
+            jTextField5.setText("Fecha de nacimiento");
+        }
+    }
+
+    private void jTextField6FocusGained(java.awt.event.FocusEvent evt) {
+        if (jTextField6.getText().equals("Número Celular")) {
+            jTextField6.setText("");
+
+        }
+    }
+
+    private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {
+        if (jTextField6.getText().isEmpty()) {
+            jTextField6.setText("Número Celular");
+        }
+    }
+
+    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {
+        if (jTextField7.getText().equals("Correo Electrónico")) {
+            jTextField7.setText("");
+
+        }
+    }
+
+    private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {
+        if (jTextField7.getText().isEmpty()) {
+            jTextField7.setText("Correo Electrónico");
+        }
+    }
+
+    private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {
+        if (jTextField8.getText().equals("ARL")) {
+            jTextField8.setText("");
+
+        }
+    }
+
+    private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {
+        if (jTextField8.getText().isEmpty()) {
+            jTextField8.setText("ARL");
+        }
+    }
+
+    private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {
+        if (jTextField9.getText().equals("EPS")) {
+            jTextField9.setText("");
+
+        }
+    }
+
+    private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {
+        if (jTextField9.getText().isEmpty()) {
+            jTextField9.setText("EPS");
+        }
+    }
+
+    private void jTextField10FocusGained(java.awt.event.FocusEvent evt) {
+        if (jTextField10.getText().equals("Número de emergencia")) {
+            jTextField10.setText("");
+
+        }
+    }
+
+    private void jTextField10FocusLost(java.awt.event.FocusEvent evt) {
+        if (jTextField10.getText().isEmpty()) {
+            jTextField10.setText("Número de emergencia");
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -121,8 +444,20 @@ public class GUIRegister extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 
 }

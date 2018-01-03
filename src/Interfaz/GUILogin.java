@@ -112,11 +112,15 @@ public class GUILogin extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 430, 220, 40));
 
         jTextField1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
         jTextField1.setText("Cedula de ciudadania");
         jTextField1.setBorder(null);
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
             }
         });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -124,13 +128,17 @@ public class GUILogin extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 380, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 362, 380, 30));
 
+        jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
         jPasswordField1.setText("Contrasenadelacedla");
         jPasswordField1.setBorder(null);
         jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jPasswordField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jPasswordField1FocusLost(evt);
             }
         });
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
@@ -193,9 +201,26 @@ public class GUILogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1FocusGained
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-        jTextField1.setText("");
-        // TODO add your handling code here:
+        
+        if (jTextField1.getText().equals("Cedula de ciudadania")) {
+                    jTextField1.setText("");
+
+        }
     }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        if (jTextField1.getText().isEmpty()) {
+            jTextField1.setText("Cedula de ciudadania");
+        }
+
+    }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jPasswordField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusLost
+        if (jPasswordField1.getText().isEmpty()) {
+            jPasswordField1.setText("****************");
+        }
+
+    }//GEN-LAST:event_jPasswordField1FocusLost
 
     /**
      * @param args the command line arguments
