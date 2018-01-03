@@ -15,6 +15,16 @@ import javax.swing.JButton;
  *
  * @author caya
  */
+//Paginas para mejorar el registro con las validaciones estanradizadas : http://programmingguide.org/validate-text-field-using-focuslistener-interface-in-java/
+//
+//Put the labels into a common collection, and iterate through that.
+//
+//Collection<JLabel> myLabels = new ArrayList<JLabel>();
+//myLabels.add(jLabel25); // .. and so on
+//
+//for (JLabel label : myLabels) {
+//   label.setVisible(false);
+//} 
 public class GUIRegister extends javax.swing.JFrame {
 
     /**
@@ -32,6 +42,11 @@ public class GUIRegister extends javax.swing.JFrame {
         jButton2.setOpaque(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setBorderPainted(false);
+
+        jLabel2.setOpaque(false);
+        jLabel2.setVisible(true);
+
+    
 
     }
 
@@ -64,7 +79,14 @@ public class GUIRegister extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        VentanaRegistro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -269,8 +291,38 @@ public class GUIRegister extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 532, 295, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Register foto SIN TEXTOS.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel2.setText("jLabel2");
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, -1, -1));
+
+        jLabel3.setText("jLabel2");
+        jLabel3.setOpaque(true);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, -1, -1));
+
+        jLabel4.setText("jLabel2");
+        jLabel4.setOpaque(true);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 290, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("* Las contraseñas no coinciden");
+        jLabel5.setOpaque(true);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, -1, -1));
+
+        jLabel6.setText("jLabel2");
+        jLabel6.setOpaque(true);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, -1, -1));
+
+        jLabel7.setText("jLabel2");
+        jLabel7.setOpaque(true);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 400, -1, -1));
+
+        jLabel8.setText("jLabel2");
+        jLabel8.setOpaque(true);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 440, -1, -1));
+
+        VentanaRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Register foto SIN TEXTOS.png"))); // NOI18N
+        getContentPane().add(VentanaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -495,9 +547,16 @@ public class GUIRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel VentanaRegistro;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField1;
