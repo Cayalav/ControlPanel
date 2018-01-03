@@ -16,11 +16,10 @@ import java.sql.Statement;
  * @author caya
  */
 public class Empleado {
-    
- 
-    private String nombre, cedula, contraseña, fecha_nacimiento,celular,correo,eps,arl,celular_emergencia;
 
-    public Empleado(String nombre, String cedula, String contraseña, String fecha_nacimiento, String celular, String correo, String eps, String arl, String celular_emergencia) {
+    private String nombre, cedula, contraseña, fecha_nacimiento, celular, correo, eps, arl, celular_emergencia, sexo;
+
+    public Empleado(String nombre, String cedula, String contraseña, String fecha_nacimiento, String celular, String correo, String eps, String arl, String celular_emergencia, String sexo) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.contraseña = contraseña;
@@ -30,15 +29,16 @@ public class Empleado {
         this.eps = eps;
         this.arl = arl;
         this.celular_emergencia = celular_emergencia;
+        this.sexo = sexo;
     }
 
-        public void save(){
+    public void save() {
         Conector con = new Conector();
         con.connect();
         con.saveEmpleado(this);
         con.close();
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -111,6 +111,14 @@ public class Empleado {
         this.celular_emergencia = celular_emergencia;
     }
 
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+    
     
 
 }

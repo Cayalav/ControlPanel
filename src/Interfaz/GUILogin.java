@@ -95,7 +95,7 @@ public class GUILogin extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 210, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 436, 200, 30));
 
         jButton3.setFocusPainted(false);
         jButton3.setMinimumSize(new java.awt.Dimension(35, 9));
@@ -109,7 +109,7 @@ public class GUILogin extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 430, 220, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(707, 436, 200, 30));
 
         jTextField1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));

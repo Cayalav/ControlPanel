@@ -78,6 +78,9 @@ public class Conector {
 
                 System.out.println("Celular de emergencia: ");
                 System.out.println(result.getString("CelularEmergencia"));
+                
+                                System.out.println("Sexo: ");
+                System.out.println(result.getString("Sexo"));
 
                 System.out.println("=======================");
             }
@@ -88,7 +91,7 @@ public class Conector {
 
     public void saveEmpleado(Empleado empleado) {
         try {
-            PreparedStatement st = connect.prepareStatement("insert into empleados (Nombre, Cedula,Contraseña,Fecha,Celular,Correo,EPS,ARL,CelularEmergencia) values (?,?,?,?,?,?,?,?,?)");
+            PreparedStatement st = connect.prepareStatement("insert into empleados (Nombre, Cedula,Contraseña,Fecha,Celular,Correo,EPS,ARL,CelularEmergencia,Sexo) values (?,?,?,?,?,?,?,?,?,?)");
             st.setString(1, empleado.getNombre());
             st.setString(2, empleado.getCedula());
             st.setString(3, empleado.getContraseña());
@@ -98,6 +101,7 @@ public class Conector {
             st.setString(7, empleado.getEps());
             st.setString(8, empleado.getArl());
             st.setString(9, empleado.getCelular_emergencia());
+              st.setString(10, empleado.getSexo());
             st.execute();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());

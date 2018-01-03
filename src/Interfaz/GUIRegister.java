@@ -166,9 +166,17 @@ public class GUIRegister extends javax.swing.JFrame {
 
         jTextField4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField4.setText("Repetir contraseña");
+        jTextField4.setText("Repetir Contraseña");
         jTextField4.setBorder(null);
         jTextField4.setOpaque(false);
+        jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField4FocusLost(evt);
+            }
+        });
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 312, 295, 20));
 
         jTextField5.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -176,6 +184,14 @@ public class GUIRegister extends javax.swing.JFrame {
         jTextField5.setText("Fecha de nacimiento");
         jTextField5.setBorder(null);
         jTextField5.setOpaque(false);
+        jTextField5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField5FocusLost(evt);
+            }
+        });
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 346, 295, 20));
 
         jTextField6.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -183,6 +199,14 @@ public class GUIRegister extends javax.swing.JFrame {
         jTextField6.setText("Número Celular");
         jTextField6.setBorder(null);
         jTextField6.setOpaque(false);
+        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField6FocusLost(evt);
+            }
+        });
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 388, 185, 20));
 
         jTextField7.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -190,6 +214,14 @@ public class GUIRegister extends javax.swing.JFrame {
         jTextField7.setText("Correo Electrónico");
         jTextField7.setBorder(null);
         jTextField7.setOpaque(false);
+        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField7FocusLost(evt);
+            }
+        });
         getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 428, 295, 20));
 
         jTextField8.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -197,6 +229,14 @@ public class GUIRegister extends javax.swing.JFrame {
         jTextField8.setText("ARL");
         jTextField8.setBorder(null);
         jTextField8.setOpaque(false);
+        jTextField8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField8FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField8FocusLost(evt);
+            }
+        });
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 462, 295, 20));
 
         jTextField9.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -204,6 +244,14 @@ public class GUIRegister extends javax.swing.JFrame {
         jTextField9.setText("EPS");
         jTextField9.setBorder(null);
         jTextField9.setOpaque(false);
+        jTextField9.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField9FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField9FocusLost(evt);
+            }
+        });
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 498, 295, 20));
 
         jTextField10.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
@@ -211,6 +259,14 @@ public class GUIRegister extends javax.swing.JFrame {
         jTextField10.setText("Número de emergencia");
         jTextField10.setBorder(null);
         jTextField10.setOpaque(false);
+        jTextField10.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField10FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField10FocusLost(evt);
+            }
+        });
         getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 532, 295, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Register foto SIN TEXTOS.png"))); // NOI18N
@@ -256,8 +312,7 @@ public class GUIRegister extends javax.swing.JFrame {
         String arl = jTextField7.getText();
         String eps = jTextField8.getText();
         String celular_emergencia = jTextField9.getText();
-
-        String sexo;
+        String sexo = null;
 
         if (jRadioButton1.isSelected()) {
             sexo = "Masculino";
@@ -269,7 +324,7 @@ public class GUIRegister extends javax.swing.JFrame {
 
         Empleado empleado = new Empleado(nombre, cedula, contraseña,
                 fecha_nacimiento, celular, correo,
-                arl, eps, celular_emergencia);
+                arl, eps, celular_emergencia, sexo);
         empleado.save();
 
 
@@ -308,104 +363,101 @@ public class GUIRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3FocusGained
 
     private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
-         if (jTextField3.getText().isEmpty()) {
+        if (jTextField3.getText().isEmpty()) {
             jTextField3.setText("Contraseña");
         }
     }//GEN-LAST:event_jTextField3FocusLost
 
-    
-
-  
-    private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {
-        if (jTextField4.getText().equals("Fepetir Contraseña")) {
+    private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
+        if (jTextField4.getText().equals("Repetir Contraseña")) {
             jTextField4.setText("");
 
         }
-    }
+    }//GEN-LAST:event_jTextField4FocusGained
 
-    private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {
+    private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
         if (jTextField4.getText().isEmpty()) {
             jTextField4.setText("Repetir Contraseña");
         }
-    }
+    }//GEN-LAST:event_jTextField4FocusLost
 
-    private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {
+    private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusGained
         if (jTextField5.getText().equals("Fecha de nacimiento")) {
             jTextField5.setText("");
 
         }
-    }
+    }//GEN-LAST:event_jTextField5FocusGained
 
-    private void jTextField5FocusLost(java.awt.event.FocusEvent evt) {
+    private void jTextField5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusLost
         if (jTextField5.getText().isEmpty()) {
             jTextField5.setText("Fecha de nacimiento");
         }
-    }
+    }//GEN-LAST:event_jTextField5FocusLost
 
-    private void jTextField6FocusGained(java.awt.event.FocusEvent evt) {
+    private void jTextField6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusGained
         if (jTextField6.getText().equals("Número Celular")) {
             jTextField6.setText("");
 
         }
-    }
+    }//GEN-LAST:event_jTextField6FocusGained
 
-    private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {
+    private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusLost
         if (jTextField6.getText().isEmpty()) {
             jTextField6.setText("Número Celular");
         }
-    }
+    }//GEN-LAST:event_jTextField6FocusLost
 
-    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {
+    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
         if (jTextField7.getText().equals("Correo Electrónico")) {
             jTextField7.setText("");
 
         }
-    }
+    }//GEN-LAST:event_jTextField7FocusGained
 
-    private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {
+    private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusLost
         if (jTextField7.getText().isEmpty()) {
             jTextField7.setText("Correo Electrónico");
         }
-    }
+    }//GEN-LAST:event_jTextField7FocusLost
 
-    private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {
+    private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusGained
         if (jTextField8.getText().equals("ARL")) {
             jTextField8.setText("");
 
         }
-    }
+    }//GEN-LAST:event_jTextField8FocusGained
 
-    private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {
+    private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusLost
         if (jTextField8.getText().isEmpty()) {
             jTextField8.setText("ARL");
         }
-    }
+    }//GEN-LAST:event_jTextField8FocusLost
 
-    private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {
+    private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
         if (jTextField9.getText().equals("EPS")) {
             jTextField9.setText("");
 
         }
-    }
+    }//GEN-LAST:event_jTextField9FocusGained
 
-    private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {
+    private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusLost
         if (jTextField9.getText().isEmpty()) {
             jTextField9.setText("EPS");
         }
-    }
+    }//GEN-LAST:event_jTextField9FocusLost
 
-    private void jTextField10FocusGained(java.awt.event.FocusEvent evt) {
+    private void jTextField10FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusGained
         if (jTextField10.getText().equals("Número de emergencia")) {
             jTextField10.setText("");
 
         }
-    }
+    }//GEN-LAST:event_jTextField10FocusGained
 
-    private void jTextField10FocusLost(java.awt.event.FocusEvent evt) {
+    private void jTextField10FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusLost
         if (jTextField10.getText().isEmpty()) {
             jTextField10.setText("Número de emergencia");
         }
-    }
+    }//GEN-LAST:event_jTextField10FocusLost
 
     /**
      * @param args the command line arguments
